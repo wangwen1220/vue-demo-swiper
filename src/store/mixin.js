@@ -2,15 +2,15 @@
 const mixin = {
   props: ['show'],
   mounted() {
-    this.activated()
+    this.update()
   },
   watch: {
     show(v) {
-      this.activated()
+      this.update()
     }
   },
   methods: {
-    activated() {
+    update() {
       if (!this.show) return
       this.$store.commit('setPageName', this.pageName)
       this.$store.commit('toggleTipsStatus', -1)

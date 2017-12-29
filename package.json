@@ -2,13 +2,21 @@
   "name": "vue-demo-swiper",
   "version": "1.0.0",
   "description": "Vue swiper demo",
-  "author": "steven <wangwen1220@139.com>",
-  "private": true,
+  "author": "Steven",
+  "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js"
   },
+  "keywords": [
+    "vue-demo-swiper",
+    "vue swiper demo",
+    "vue spa",
+    "vue-awesome-swiper",
+    "vue swiper",
+    "swiper"
+  ],
   "dependencies": {
     "nib": "^1.1.2",
     "vue": "^2.5.2",
