@@ -6,13 +6,13 @@
       <app-header></app-header>
       <section class="app-content">
         <swiper :options="swiperOption" ref="vswiper">
-          <swiper-slide class="view" data-hash="wechat"><wechat :show="pageIndex === 0"></wechat></swiper-slide>
-          <swiper-slide class="view" data-hash="contact"><contact :show="pageIndex === 1"></contact></swiper-slide>
-          <swiper-slide class="view" data-hash="find"><find :show="pageIndex === 2"></find></swiper-slide>
-          <swiper-slide class="view" data-hash="me"><me :show="pageIndex === 3"></me></swiper-slide>
+          <swiper-slide class="view" data-history="wechat"><wechat :show="pageIndex === 0"></wechat></swiper-slide>
+          <swiper-slide class="view" data-history="contact"><contact :show="pageIndex === 1"></contact></swiper-slide>
+          <swiper-slide class="view" data-history="find"><find :show="pageIndex === 2"></find></swiper-slide>
+          <swiper-slide class="view" data-history="me"><me :show="pageIndex === 3"></me></swiper-slide>
         </swiper>
       </section>
-      <app-footer></app-footer>
+      <app-footer :page-index="pageIndex"></app-footer>
     </div>
 
     <!-- 子页面 -->
@@ -55,7 +55,12 @@
         leaveAnimate: '', // 页面离开动效
         swiperOption: {
           // history: true
-          hashNavigation: true
+          history: {
+            key: ''
+          }
+          // hashNavigation: {
+          //   watchState: true
+          // }
         }
       }
     },
@@ -94,7 +99,8 @@
       // this.swiper.slideTo(3, 1000, false)
       console.log('Page Index:', this.swiper.activeIndex)
       console.log('Page Path:', this.$route.path)
-      this.swiper.on('slideChangeTransitionEnd', () => {
+      this.pageIndex = this.swiper.activeIndex
+      this.swiper.on('transitionStart', () => {
         console.log('Page Index:', this.swiper.activeIndex)
         console.log('Page Path:', this.$route.path)
         this.pageIndex = this.swiper.activeIndex

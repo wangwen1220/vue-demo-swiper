@@ -4,6 +4,9 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const routes = [{
+  path: '/',
+  alias: ['/wechat', '/contact', '/find', '/me']
+}, {
   path: '/wechat/dialogue',
   components: {
     'default': resolve => require(['../views/wechat.vue'], resolve),

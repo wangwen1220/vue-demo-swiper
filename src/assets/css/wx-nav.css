@@ -30,22 +30,24 @@
   width: 28px;
   height: 28px;
   margin: 0 auto;
+  margin-bottom: 2px;
   font-size: 28px;
   color: #797979;
-  margin-bottom: 2px
+  transition: color .2s ease-in;
 }
 
 #wx-nav nav dd {
-  color: #929292;
   -webkit-transform-origin: 50% 0;
   -ms-transform-origin: 50% 0;
   transform-origin: 50% 0;
   -webkit-transform: scale(0.9);
   -ms-transform: scale(0.9);
-  transform: scale(0.9)
+  transform: scale(0.9);
+  color: #929292;
+  transition: color .2s ease-in;
 }
 
 /* #wx-nav nav dl.router-link-active dd, #wx-nav nav dl.router-link-active dt, */
 #wx-nav nav dl.on dd, #wx-nav nav dl.on dt {
-  color: #0bb908
+  color: #0bb908;
 }

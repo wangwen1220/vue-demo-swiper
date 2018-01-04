@@ -1,6 +1,5 @@
 import Vue from 'vue'
 // import ddb from 'wjs'
-
 import App from './app'
 import store from './store'
 import router from './router'
